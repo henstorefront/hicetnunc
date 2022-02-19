@@ -133,21 +133,6 @@ export const ItemInfo = ({
               <Button to={`${PATH.OBJKT}/${id}`} disabled={isDetailView}>
                 <Primary>OBJKT#{id}</Primary>
               </Button>
-            </div>
-          )}
-        </div>
-
-        {isDetailView && !restricted && (
-          <div className={styles.spread}>
-            <p style={{ paddingBottom: '7.5px' }}>OBJKT#{id}</p>
-            <Button onClick={() => handleCollect()}>
-              <Purchase>{message}</Purchase>
-            </Button>
-          </div>
-        )}
-        <div className={styles.spread}>
-          <Button onClick={() => curate(id)}>
-            <Primary>
               <span
                 className={styles.top}
                 data-position={'top'}
@@ -155,9 +140,25 @@ export const ItemInfo = ({
               >
                 〇
               </span>
+            </div>
+          )}
+        </div>
+
+        {isDetailView && !restricted && (
+          <div className={styles.spread}>
+            <p style={{ paddingBottom: '7.5px' }}>OBJKT#{id}</p>
+            <Button onClick={() => handleCollect()} full>
+              <Purchase>{message}</Purchase>
+            </Button>
+          </div>
+        )}
+        {/* <div className={styles.spread}>
+          <Button onClick={() => curate(id)}>
+            <Primary>
+
             </Primary>
           </Button>
-        </div>
+        </div> */}
       </>
     )
   } else {
